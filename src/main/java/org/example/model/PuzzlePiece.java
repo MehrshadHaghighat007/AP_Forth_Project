@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -6,9 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class PuzzlePiece {
-    public Image img;
-    protected int pieceNumber;
-    Location location;
+    private Image img;
+    private int pieceNumber;
+    private Location location;
 
     public PuzzlePiece(String imageName) {
         try {
@@ -38,8 +38,25 @@ public class PuzzlePiece {
         this.pieceNumber = pieceNumber;
     }
 
-    public void setImage(Image img) {
+    public int getPieceNumber() {
+        return pieceNumber;
+    }
+
+    public void setImg(Image img) {
         this.img = img;
+    }
+
+
+    public Image getImg() {
+        return img;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 
     public PuzzlePiece getClone() {

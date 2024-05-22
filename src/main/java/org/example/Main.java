@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.model.Location;
+import org.example.model.PuzzlePiece;
+import org.example.view.MyPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

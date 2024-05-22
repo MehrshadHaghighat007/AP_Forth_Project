@@ -1,16 +1,18 @@
-package org.example;
+package org.example.view;
+
+import org.example.model.PuzzlePiece;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 public class MyPanel extends JPanel {
-    public static MyPanel panelInstance;
+    private static MyPanel panelInstance;
     public ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
     public int missingPiece = 0;
     public String gameState = "#";
 
-    public MyPanel() {
+    private MyPanel() {
 
     }
 
@@ -24,10 +26,10 @@ public class MyPanel extends JPanel {
 
     public void swapPieces(int i, int j) {
         PuzzlePiece copy = this.puzzlePieces.get(i).getClone();
-        puzzlePieces.get(i).setImage(puzzlePieces.get(j).img);
-        puzzlePieces.get(i).setPieceNumber(puzzlePieces.get(j).pieceNumber);
-        puzzlePieces.get(j).setImage(copy.img);
-        puzzlePieces.get(j).setPieceNumber(copy.pieceNumber);
+        puzzlePieces.get(i).setImg(puzzlePieces.get(j).getImg());
+        puzzlePieces.get(i).setPieceNumber(puzzlePieces.get(j).getPieceNumber());
+        puzzlePieces.get(j).setImg(copy.getImg());
+        puzzlePieces.get(j).setPieceNumber(copy.getPieceNumber());
 
         if (gameFinished()) {
             gameState = "finished";
@@ -36,7 +38,7 @@ public class MyPanel extends JPanel {
 
     public boolean gameFinished() {
         for (int i = 0; i < 9; i++) {
-            int pieceIdentifier = puzzlePieces.get(i).pieceNumber;
+            int pieceIdentifier = puzzlePieces.get(i).getPieceNumber();
             if (pieceIdentifier == 8) {
                 continue;
             }
@@ -60,7 +62,15 @@ public class MyPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for (PuzzlePiece piece : puzzlePieces) {
-            g.drawImage(piece.img, piece.location.getX(), piece.location.getY(), (int) this.getSize().getWidth() / 3, (int) this.getSize().getHeight() / 3, null);
+            g.drawImage(piece.getImg(), piece.getLocation().getX(), piece.getLocation().getY(), (int) this.getSize().getWidth() / 3, (int) this.getSize().getHeight() / 3, null);
         }
+    }
+
+
+    public static MyPanel getPanelInstance() {
+        if (panelInstance == null) {
+            panelInstance = new MyPanel();
+        }
+        return panelInstance;
     }
 }
