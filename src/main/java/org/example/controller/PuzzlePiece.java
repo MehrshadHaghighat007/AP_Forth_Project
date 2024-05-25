@@ -2,30 +2,27 @@ package org.example.controller;
 
 import org.example.model.Location;
 import java.awt.*;
-import java.io.IOException;
 
 public class PuzzlePiece {
     private org.example.model.PuzzlePiece puzzlePieceParameters;
     private PuzzlePieceLoader puzzlePieceLoader;
+    private PuzzlePieceHelper puzzlePieceHelper;
 
 
-    public PuzzlePiece(Image image, int pieceNumber) {
-        puzzlePieceParameters = new org.example.model.PuzzlePiece();
-        puzzlePieceParameters.setImg(image);
-        puzzlePieceParameters.setPieceNumber(pieceNumber);
-    }
-
-//    public PuzzlePiece(String imageName) {
-//        try {
-//            puzzlePieceLoader.loadPuzzlePiece(imageName);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+//    public PuzzlePiece(Image image, int pieceNumber) {
+//        puzzlePieceParameters = new org.example.model.PuzzlePiece();
+//        puzzlePieceParameters.setImg(image);
+//        puzzlePieceParameters.setPieceNumber(pieceNumber);
 //    }
 
-    public PuzzlePiece(String ImagePath, Location location) {
+    public PuzzlePiece(String imageName) {
+        puzzlePieceHelper = new PuzzlePieceHelper(imageName);
 
-        (ImagePath);
+    }
+
+    public PuzzlePiece(String ImagePath, Location location) {
+        this(ImagePath);
+        puzzlePieceParameters = new org.example.model.PuzzlePiece();
         puzzlePieceParameters.setLocation(location);
     }
 
@@ -45,6 +42,7 @@ public class PuzzlePiece {
 
         return clone;
     }
+
 
 //    public void setPuzzlePieceParameters(org.example.model.PuzzlePiece puzzlePieceParameters) {
 //        this.puzzlePieceParameters = puzzlePieceParameters;
