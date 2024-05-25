@@ -2,7 +2,6 @@ package org.example;
 
 import org.example.controller.PuzzlePiece;
 import org.example.model.Location;
-import org.example.view.MyPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,21 +11,21 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+//        JFrame frame = new JFrame();
 
 
 
-        int screenWidth;
-        int screenHeight;
-        screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-        screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-        int maxSize = Math.max(screenWidth, screenHeight) / 3;
-        panel.setSize(maxSize, maxSize);
-        panel.setLocation(screenWidth / 2 - maxSize / 2, screenHeight / 2 - maxSize / 2);
-        frame.setSize(panel.getSize());
-        frame.setLocation(panel.getLocation());
-        frame.add(panel);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//        int screenWidth;
+//        int screenHeight;
+//        screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+//        screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+//        int maxSize = Math.max(screenWidth, screenHeight) / 3;
+//        panel.setSize(maxSize, maxSize);
+//        panel.setLocation(screenWidth / 2 - maxSize / 2, screenHeight / 2 - maxSize / 2);
+//        frame.setSize(panel.getSize());
+//        frame.setLocation(panel.getLocation());
+//        frame.add(panel);
+
         ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
         ArrayList<Integer> piecesRandomOrder = new ArrayList<>(Arrays.asList(7, 0, 1, 8, 3, 2, 6, 5, 4));
 
@@ -48,7 +47,7 @@ public class Main {
             }
         }
         panel.setPuzzlePieces(puzzlePieces);
-        frame.addKeyListener(new MyKeyListener());
+
         frame.setVisible(true);
         while (true) {
             try {

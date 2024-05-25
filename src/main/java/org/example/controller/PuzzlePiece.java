@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.model.Location;
 import java.awt.*;
+import java.io.IOException;
 
 public class PuzzlePiece {
     private org.example.model.PuzzlePiece puzzlePieceParameters;
@@ -15,12 +16,12 @@ public class PuzzlePiece {
 //        puzzlePieceParameters.setPieceNumber(pieceNumber);
 //    }
 
-    public PuzzlePiece(String imageName) {
+    public PuzzlePiece(String imageName) throws IOException {
         puzzlePieceHelper = new PuzzlePieceHelper(imageName);
 
     }
 
-    public PuzzlePiece(String ImagePath, Location location) {
+    public PuzzlePiece(String ImagePath, Location location) throws IOException {
         this(ImagePath);
         puzzlePieceParameters = new org.example.model.PuzzlePiece();
         puzzlePieceParameters.setLocation(location);

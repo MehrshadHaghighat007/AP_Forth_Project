@@ -1,11 +1,16 @@
 package org.example;
 
-import org.example.view.MyPanel;
+import org.example.controller.UpdatePiece;
+import org.example.view.MyFrame;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class MyKeyListener implements KeyListener {
+    private final UpdatePiece updatePiece;
+    public MyKeyListener(MyFrame myFrame) {
+        updatePiece = new UpdatePiece(myFrame);
+    }
     @Override
     public void keyTyped(KeyEvent keyEvent) {
     }
@@ -13,36 +18,20 @@ public class MyKeyListener implements KeyListener {
     @Override
     public void keyPressed(KeyEvent keyEvent) {
 
-        int missingPieceIndex = MyPanel.getInstance().missingPiece;
+        int missingPieceIndex = MyFrame.getMyFrame().getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece();
         if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if (missingPieceIndex % 3 == 2) {
-                return;
-            }
-            MyPanel.getInstance().swapPieces(missingPieceIndex, missingPieceIndex + 1);
-            MyPanel.getInstance().setMissingPiece(missingPieceIndex + 1);
+            updatePiece.moveRight(missingPieceIndex);
         } else if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-            if (missingPieceIndex % 3 == 0) {
-                return;
-            }
-            MyPanel.getInstance().swapPieces(missingPieceIndex, missingPieceIndex - 1);
-            MyPanel.getInstance().setMissingPiece(missingPieceIndex - 1);
+            updatePiece.moveLeft(missingPieceIndex);
         } else if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
-            if (missingPieceIndex <= 2) {
-                return;
-            }
-            MyPanel.getInstance().swapPieces(missingPieceIndex, missingPieceIndex - 3);
-            MyPanel.getInstance().setMissingPiece(missingPieceIndex - 3);
+            updatePiece.moveUp(missingPieceIndex);
         } else if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
-            if (missingPieceIndex >= 6) {
-                return;
-            }
-            MyPanel.getInstance().swapPieces(missingPieceIndex, missingPieceIndex + 3);
-            MyPanel.getInstance().setMissingPiece(missingPieceIndex + 3);
+            updatePiece.moveDown(missingPieceIndex);
         }
 
-        if (MyPanel.getInstance().gameState.equals("finished")) {
-            return;
-        }
+//        if (MyPanel.getInstance().gameState.equals("finished")) {
+//            return;
+//        }
     }
 
     @Override

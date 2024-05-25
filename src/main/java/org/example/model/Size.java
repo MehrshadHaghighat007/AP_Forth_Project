@@ -1,15 +1,20 @@
 package org.example.model;
 
 import org.example.controller.ConfigController;
+import org.example.controller.SizeCalculation;
 
 public class Size {
     private int widthGame;
     private int heightGame;
     private int xCoordinate;
     private int yCoordinate;
+
     public Size() {
-        int width = ConfigController.getConfigController().getConfigControllerParameters().getConfig().getSize().get("width");
-        int height = ConfigController.getConfigController().getConfigControllerParameters().getConfig().getSize().get("height");
+        SizeCalculation sizeCalculation = new SizeCalculation();
+        widthGame = sizeCalculation.calculatedWidth();
+        heightGame = sizeCalculation.calculatedHeight();
+        xCoordinate = sizeCalculation.calculatedXCoordinate();
+        yCoordinate = sizeCalculation.calculatedYCoordinate();
     }
 
     public int getWidthGame() {
