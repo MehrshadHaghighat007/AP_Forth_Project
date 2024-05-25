@@ -1,7 +1,7 @@
 package org.example;
 
+import org.example.controller.PuzzlePiece;
 import org.example.model.Location;
-import org.example.model.PuzzlePiece;
 import org.example.view.MyPanel;
 
 import javax.swing.*;
@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
 
-        MyPanel panel = MyPanel.getInstance();
+
 
         int screenWidth;
         int screenHeight;
@@ -42,9 +42,9 @@ public class Main {
         for (int i = 0; i < 9; i++) {
             System.out.println(i + " " + piecesRandomOrder.get(i));
             if (panel.missingPiece != i) {
-                puzzlePieces.add(new PuzzlePiece(piecesRandomOrder.get(i) + 1 + ".png", new Location(panel.getHeight() / 3 * (i % 3), panel.getWidth() / 3 * (i / 3))));
+                puzzlePieces.add(new org.example.controller.PuzzlePiece(piecesRandomOrder.get(i) + 1 + ".png", new Location(panel.getHeight() / 3 * (i % 3), panel.getWidth() / 3 * (i / 3))));
             } else {
-                puzzlePieces.add(new PuzzlePiece("missing.jpg", new Location(panel.getHeight() / 3 * (i % 3), panel.getWidth() / 3 * (i / 3))));
+                puzzlePieces.add(new org.example.controller.PuzzlePiece("missing.jpg", new Location(panel.getHeight() / 3 * (i % 3), panel.getWidth() / 3 * (i / 3))));
             }
         }
         panel.setPuzzlePieces(puzzlePieces);
@@ -70,26 +70,5 @@ public class Main {
                 gameFinished = true;
             }
         }
-    }
-
-    public static boolean solvable(int missingPiece, ArrayList<Integer> piecesOrder) {
-        int inversionCount = 0;
-
-        for (int i = 0; i < 9; i++) {
-            for (int j = i + 1; j < 9; j++) {
-                if (piecesOrder.get(i) > piecesOrder.get(j)) {
-                    inversionCount += 1;
-                }
-            }
-        }
-
-        int parity = inversionCount % 2;
-        int distanceOfMissingPiece = (2 - (missingPiece % 3)) + (2 - (missingPiece / 3));
-
-        parity ^= (distanceOfMissingPiece % 2);
-        if (parity == 0) {
-            return true;
-        }
-        return false;
     }
 }

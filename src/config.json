@@ -20,5 +20,13 @@
     6,
     7,
     8
-  ]
+  ],
+  "size": {
+    "width": 2880,
+    "height": 1620
+  },
+  "tiles" : {
+    "width tiles" : 3,
+    "height tiles" : 3
+  }
 }

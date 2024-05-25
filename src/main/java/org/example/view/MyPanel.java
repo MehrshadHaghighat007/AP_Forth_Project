@@ -1,6 +1,7 @@
 package org.example.view;
 
-import org.example.model.PuzzlePiece;
+import org.example.controller.PuzzlePiece;
+import org.example.model.Size;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,9 +12,12 @@ public class MyPanel extends JPanel {
     public ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
     public int missingPiece = 0;
     public String gameState = "#";
+    private Size size;
 
     private MyPanel() {
-
+        size = new Size();
+        this.setSize(size.getWidthGame(), size.getHeightGame());
+        this.setLocation();
     }
 
     public static MyPanel getInstance() {
@@ -26,10 +30,10 @@ public class MyPanel extends JPanel {
 
     public void swapPieces(int i, int j) {
         PuzzlePiece copy = this.puzzlePieces.get(i).getClone();
-        puzzlePieces.get(i).setImg(puzzlePieces.get(j).getImg());
-        puzzlePieces.get(i).setPieceNumber(puzzlePieces.get(j).getPieceNumber());
-        puzzlePieces.get(j).setImg(copy.getImg());
-        puzzlePieces.get(j).setPieceNumber(copy.getPieceNumber());
+        puzzlePieces.get(i).getPuzzlePieceParameters().setImg(puzzlePieces.get(j).getPuzzlePieceParameters().getImg());
+        puzzlePieces.get(i).getPuzzlePieceParameters().setPieceNumber(puzzlePieces.get(j).getPuzzlePieceParameters().getPieceNumber());
+        puzzlePieces.get(j).getPuzzlePieceParameters().setImg(copy.getPuzzlePieceParameters().getImg());
+        puzzlePieces.get(j).getPuzzlePieceParameters().setPieceNumber(copy.getPuzzlePieceParameters().getPieceNumber());
 
         if (gameFinished()) {
             gameState = "finished";
@@ -38,7 +42,7 @@ public class MyPanel extends JPanel {
 
     public boolean gameFinished() {
         for (int i = 0; i < 9; i++) {
-            int pieceIdentifier = puzzlePieces.get(i).getPieceNumber();
+            int pieceIdentifier = puzzlePieces.get(i).getPuzzlePieceParameters().getPieceNumber();
             if (pieceIdentifier == 8) {
                 continue;
             }
@@ -62,7 +66,7 @@ public class MyPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for (PuzzlePiece piece : puzzlePieces) {
-            g.drawImage(piece.getImg(), piece.getLocation().getX(), piece.getLocation().getY(), (int) this.getSize().getWidth() / 3, (int) this.getSize().getHeight() / 3, null);
+            g.drawImage(piece.getPuzzlePieceParameters().getImg(), piece.getPuzzlePieceParameters().getLocation().getX(), piece.getPuzzlePieceParameters().getLocation().getY(), (int) this.getSize().getWidth() / 3, (int) this.getSize().getHeight() / 3, null);
         }
     }
 
