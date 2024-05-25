@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyKeyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ConfigController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePieceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePieceHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePieceLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePieceLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Size.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
