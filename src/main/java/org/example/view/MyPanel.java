@@ -1,5 +1,6 @@
 package org.example.view;
 
+import org.example.controller.ConfigController;
 import org.example.model.PuzzlePiece;
 import org.example.model.SizeOfTheGame;
 
@@ -30,7 +31,7 @@ public class MyPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for (PuzzlePiece piece : myPanelParameters.getPuzzlePieces()) {
-            g.drawImage(piece.getImg(), piece.getLocation().getX(), piece.getLocation().getY(), (int) this.getSize().getWidth() / 3, (int) this.getSize().getHeight() / 3, null);
+            g.drawImage(piece.getImg(), piece.getLocation().getX(), piece.getLocation().getY(), (int) this.getSize().getWidth() / ConfigController.getConfigController().getConfig().getTiles().get("width"), (int) this.getSize().getHeight() / ConfigController.getConfigController().getConfig().getTiles().get("height"), null);
         }
     }
 

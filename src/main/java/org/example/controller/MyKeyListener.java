@@ -1,7 +1,5 @@
-package org.example;
+package org.example.controller;
 
-import org.example.controller.FinishHandler;
-import org.example.controller.UpdatePiece;
 import org.example.view.MyFrame;
 
 import java.awt.event.KeyEvent;

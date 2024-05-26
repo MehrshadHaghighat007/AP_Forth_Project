@@ -10,11 +10,11 @@ public class SizeCalculation {
     }
 
     public int calculatedWidth() {
-        return maxSize / configController.getConfig().getTiles().get("width");
+        return maxSize / 3;
     }
 
     public int calculatedHeight() {
-        return maxSize / configController.getConfig().getTiles().get("height");
+        return maxSize / 3;
     }
 
     public int calculatedXCoordinate() {

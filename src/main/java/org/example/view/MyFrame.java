@@ -1,6 +1,6 @@
 package org.example.view;
 
-import org.example.MyKeyListener;
+import org.example.controller.MyKeyListener;
 import org.example.model.SizeOfTheGame;
 
 import javax.swing.*;

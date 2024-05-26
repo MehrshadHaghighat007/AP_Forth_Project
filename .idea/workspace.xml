@@ -6,23 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/missing.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/missing.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/missing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MyKeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SizeCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SizeCalculation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SolvableImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SolvableImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +73,7 @@
       <module name="AP_Forth_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,9 +128,18 @@
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
+          <line>32</line>
+          <properties class="org.example.controller.GameManager" method="initialOrderingManager">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>62</line>
+          <line>67</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

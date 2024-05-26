@@ -14,13 +14,13 @@ public class GameManager {
     private final MyFrame myFrame;
     private final ConfigController configController;
     private final Solvable solvable;
-    private FinishHandler finishHandler;
+    private final FinishHandler finishHandler;
     private boolean gameFinished = false;
 
     public GameManager(MyFrame myFrame, ConfigController configController) {
         this.myFrame = myFrame;
         this.configController = configController;
-        solvable = new SolvableImpl();
+        solvable = new SolvableImpl(configController);
         finishHandler = new FinishHandler(myFrame);
         try {
             initialOrderingManager();
@@ -34,7 +34,7 @@ public class GameManager {
         ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
         ArrayList<Integer> piecesRandomOrder = new ArrayList<>(ConfigController.getConfigController().getConfig().getInitialOrdering());
         for (int i = 0; i < piecesRandomOrder.size(); i++) {
-            if (piecesRandomOrder.get(i) == 8) {
+            if (piecesRandomOrder.get(i) == configController.getConfig().getTiles().get("width") * configController.getConfig().getTiles().get("height") - 1) {
                 myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(i);
             }
         }
@@ -42,11 +42,16 @@ public class GameManager {
             Warning.showSolvabilityMessage(myFrame.getMyFrameParameters().getMyPanel());
             gameFinished = true;
         }
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < configController.getConfig().getTiles().get("width") * configController.getConfig().getTiles().get("height"); i++) {
             if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece() != i) {
-                puzzlePieces.add(new PuzzlePiece(piecesRandomOrder.get(i) + 1 + ".png", new Location(myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getWidthGame() / configController.getConfig().getTiles().get("width") * (i % configController.getConfig().getTiles().get("width")), myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getHeightGame() / configController.getConfig().getTiles().get("height") * (i / configController.getConfig().getTiles().get("height")))));
+                if (i < 9) {
+                    puzzlePieces.add(new PuzzlePiece(piecesRandomOrder.get(i) + 1 + ".png", new Location(myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getHeightGame() / configController.getConfig().getTiles().get("width") * (i % configController.getConfig().getTiles().get("width")), myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getWidthGame() / configController.getConfig().getTiles().get("height") * (i / configController.getConfig().getTiles().get("width")))));
+                } else {
+                    puzzlePieces.add(new PuzzlePiece("1" + (piecesRandomOrder.get(i) - 9) + ".png", new Location(myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getHeightGame() / configController.getConfig().getTiles().get("width") * (i % configController.getConfig().getTiles().get("width")), myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getWidthGame() / configController.getConfig().getTiles().get("height") * (i / configController.getConfig().getTiles().get("width")))));
+
+                }
             } else {
-                puzzlePieces.add(new PuzzlePiece("missing.png", new Location(myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getWidthGame() / configController.getConfig().getTiles().get("width") * (i % configController.getConfig().getTiles().get("width")), myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getHeightGame() / configController.getConfig().getTiles().get("height") * (i / configController.getConfig().getTiles().get("height")))));
+                puzzlePieces.add(new PuzzlePiece("missing.png", new Location(myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getHeightGame() / configController.getConfig().getTiles().get("width") * (i % configController.getConfig().getTiles().get("width")), myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getWidthGame() / configController.getConfig().getTiles().get("height") * (i / configController.getConfig().getTiles().get("width")))));
             }
         }
         myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setPuzzlePieces(puzzlePieces);

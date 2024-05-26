@@ -8,9 +8,9 @@ public class FinishHandler {
         this.myFrame = myFrame;
     }
     public boolean gameFinished() {
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height"); i++) {
             int pieceIdentifier = myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getPuzzlePieces().get(i).getPieceNumber();
-            if (pieceIdentifier == 8) {
+            if (pieceIdentifier == (ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height")) - 1) {
                 continue;
             }
 
