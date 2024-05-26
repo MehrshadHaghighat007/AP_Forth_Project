@@ -7,6 +7,12 @@
     <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/15.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/15.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/4.png" afterDir="false" />
@@ -14,26 +20,9 @@
       <change beforePath="$PROJECT_DIR$/src/assets/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/7.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyKeyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ConfigController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ImageLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ImageLoaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ImageLoaderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePiece.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePieceHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PuzzlePieceLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SizeCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SizeCalculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SwapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SwapImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UpdatePiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UpdatePiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ConfigController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MyPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/PuzzlePiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/PuzzlePiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/SizeOfTheGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/missing.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/missing.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/missing.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
