@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.controller.FinishHandler;
 import org.example.controller.UpdatePiece;
 import org.example.view.MyFrame;
 
@@ -8,8 +9,12 @@ import java.awt.event.KeyListener;
 
 public class MyKeyListener implements KeyListener {
     private final UpdatePiece updatePiece;
+    private final FinishHandler finishHandler;
+    private final MyFrame myFrame;
     public MyKeyListener(MyFrame myFrame) {
+        this.myFrame = myFrame;
         updatePiece = new UpdatePiece(myFrame);
+        finishHandler = new FinishHandler(myFrame);
     }
     @Override
     public void keyTyped(KeyEvent keyEvent) {
@@ -28,10 +33,11 @@ public class MyKeyListener implements KeyListener {
         } else if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
             updatePiece.moveDown(missingPieceIndex);
         }
-
-//        if (MyPanel.getInstance().gameState.equals("finished")) {
-//            return;
-//        }
+        finishHandler.gameFinished();
+        finishHandler.gameStateStatus();
+        if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getGameState().equals("finished")) {
+            return;
+        }
     }
 
     @Override

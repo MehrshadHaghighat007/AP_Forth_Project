@@ -4,5 +4,6 @@ import java.awt.*;
 import java.io.IOException;
 
 public interface ImageLoader {
-    Image loadImage(String imageName) throws IOException;
+    public void loadImage(String imageName) throws IOException;
+    public void pieceNumberManager(String imageName);
 }

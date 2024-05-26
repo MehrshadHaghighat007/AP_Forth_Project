@@ -12,7 +12,6 @@ public class ConfigController {
     private static final String CONFIG_FILE = "src/config.json";
     private Config config;
 
-
     private ConfigController() {
         config = new Config();
         loadConfig();
@@ -36,9 +35,5 @@ public class ConfigController {
 
     public Config getConfig() {
         return config;
-    }
-
-    public void setConfig(Config config) {
-        this.config = config;
     }
 }

@@ -11,7 +11,6 @@ public class SizeCalculation {
 
     public int calculatedWidth() {
         return maxSize / configController.getConfig().getTiles().get("width");
-
     }
 
     public int calculatedHeight() {

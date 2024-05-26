@@ -3,13 +3,12 @@ package org.example.model;
 import org.example.view.MyPanel;
 
 public class MyFrame {
-    private MyPanel myPanel;
+    private final MyPanel myPanel;
+    public MyFrame() {
+        myPanel = MyPanel.getInstance();
+    }
 
     public MyPanel getMyPanel() {
         return myPanel;
-    }
-
-    public void setMyPanel(MyPanel myPanel) {
-        this.myPanel = myPanel;
     }
 }

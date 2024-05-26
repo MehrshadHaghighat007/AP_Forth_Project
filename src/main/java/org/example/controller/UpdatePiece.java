@@ -3,12 +3,12 @@ package org.example.controller;
 import org.example.view.MyFrame;
 
 public class UpdatePiece {
-    private final MoveableImpl moveableImpl;
+    private final Moveable moveableImpl;
     private final MyFrame myFrame;
     private final SwapImpl swapImpl;
     public UpdatePiece(MyFrame myFrame) {
         moveableImpl = new MoveableImpl();
-        swapImpl = new SwapImpl();
+        swapImpl = new SwapImpl(myFrame);
         this.myFrame = myFrame;
     }
     public void moveRight(int missingPieceIndex) {

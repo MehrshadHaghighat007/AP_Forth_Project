@@ -1,7 +1,4 @@
 package org.example.model;
-
-import org.example.controller.PuzzlePiece;
-
 import java.util.ArrayList;
 
 public class MyPanel {

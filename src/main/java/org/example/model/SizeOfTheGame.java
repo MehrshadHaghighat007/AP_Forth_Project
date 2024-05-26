@@ -1,15 +1,14 @@
 package org.example.model;
 
-import org.example.controller.ConfigController;
 import org.example.controller.SizeCalculation;
 
-public class Size {
+public class SizeOfTheGame {
     private int widthGame;
     private int heightGame;
     private int xCoordinate;
     private int yCoordinate;
 
-    public Size() {
+    public SizeOfTheGame() {
         SizeCalculation sizeCalculation = new SizeCalculation();
         widthGame = sizeCalculation.calculatedWidth();
         heightGame = sizeCalculation.calculatedHeight();

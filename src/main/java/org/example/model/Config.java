@@ -10,7 +10,7 @@ public class Config {
     private ArrayList<String> images = new ArrayList<>();
     @SerializedName("initial-ordering")
     private ArrayList<Integer> initialOrdering = new ArrayList<>();
-    @SerializedName("Size")
+    @SerializedName("size")
     private LinkedHashMap<String, Integer> size;
     @SerializedName("tiles")
     private LinkedHashMap<String, Integer> tiles;
@@ -19,31 +19,31 @@ public class Config {
         return images;
     }
 
-    public void setImages(ArrayList<String> images) {
-        this.images = images;
-    }
+//    public void setImages(ArrayList<String> images) {
+//        this.images = images;
+//    }
 
     public ArrayList<Integer> getInitialOrdering() {
         return initialOrdering;
     }
 
-    public void setInitialOrdering(ArrayList<Integer> initialOrdering) {
-        this.initialOrdering = initialOrdering;
-    }
+//    public void setInitialOrdering(ArrayList<Integer> initialOrdering) {
+//        this.initialOrdering = initialOrdering;
+//    }
 
     public LinkedHashMap<String, Integer> getSize() {
         return size;
     }
 
-    public void setSize(LinkedHashMap<String, Integer> size) {
-        this.size = size;
-    }
+//    public void setSize(LinkedHashMap<String, Integer> size) {
+//        this.size = size;
+//    }
 
     public LinkedHashMap<String, Integer> getTiles() {
         return tiles;
     }
 
-    public void setTiles(LinkedHashMap<String, Integer> tiles) {
-        this.tiles = tiles;
-    }
+//    public void setTiles(LinkedHashMap<String, Integer> tiles) {
+//        this.tiles = tiles;
+//    }
 }
