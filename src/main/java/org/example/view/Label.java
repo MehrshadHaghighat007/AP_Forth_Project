@@ -9,6 +9,8 @@ public class Label extends JLabel {
     private Label() {
         setBounds(org.example.model.Label.getxCoordinate(), org.example.model.Label.getyCoordinate(), org.example.model.Label.getWIDTH(), org.example.model.Label.getHEIGHT());
         setText("Choose the mode of the game :");
+        setHorizontalAlignment(SwingConstants.CENTER);
+        setVerticalAlignment(SwingConstants.CENTER);
         setBackground(new Color(1, 2, 3));
         setForeground(new Color(100, 200, 125));
         setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 15));

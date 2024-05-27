@@ -1,17 +1,26 @@
 package org.example.view;
 
+import org.example.controller.ConfigController;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class ParentButton extends JButton {
-    private static ParentButton parentButton = null;
-    private ParentButton(String text, Integer xCoordinate) {
-        setBounds();
+
+    protected ParentButton(String text, Integer xCoordinate) {
+        setBounds(xCoordinate, ConfigController.getConfigController().getConfig().getButtonsParameters().get("bounds").get("y"), ConfigController.getConfigController().getConfig().getButtonsParameters().get("bounds").get("width"), ConfigController.getConfigController().getConfig().getButtonsParameters().get("bounds").get("height"));
+        setText(text);
+        setBackground(new Color(1, 2, 3));
+        setForeground(new Color(100, 200, 125));
+        setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 15));
+        setFocusable(false);
+        setOpaque(true);
     }
 
-    public static ParentButton getParentButton(String text, Integer xCoordinate) {
-        if (parentButton == null) {
-            parentButton = new ParentButton(text, xCoordinate);
-        }
-        return parentButton;
-    }
+//    public static ParentButton getParentButton(String text, Integer xCoordinate) {
+//        if (parentButton == null) {
+//            parentButton = new ParentButton(text, xCoordinate);
+//        }
+//        return parentButton;
+//    }
 }

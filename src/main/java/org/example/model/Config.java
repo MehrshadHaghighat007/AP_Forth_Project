@@ -21,7 +21,9 @@ public class Config {
     @SerializedName("choose mode label")
     private LinkedHashMap<String, LinkedHashMap<String, Integer>> labelParameters;
     @SerializedName("buttons")
-    private LinkedHashMap<String, LinkedHashMap<String, LinkedHashMap<String, Integer>>> buttonsParameters;
+    private LinkedHashMap<String, LinkedHashMap<String, Integer>> buttonsParameters;
+    @SerializedName("check box")
+    private LinkedHashMap<String, LinkedHashMap<String, Integer>> checkBoxParameters;
 
     public ArrayList<String> getImages() {
         return images;
@@ -47,11 +49,15 @@ public class Config {
         return labelParameters;
     }
 
-    public LinkedHashMap<String, LinkedHashMap<String, LinkedHashMap<String, Integer>>> getButtonsParameters() {
+    public LinkedHashMap<String, LinkedHashMap<String, Integer>> getButtonsParameters() {
         return buttonsParameters;
     }
 
     public LinkedHashMap<String, Integer> getCoordinatesOfThePanel() {
         return coordinatesOfThePanel;
+    }
+
+    public LinkedHashMap<String, LinkedHashMap<String, Integer>> getCheckBoxParameters() {
+        return checkBoxParameters;
     }
 }
