@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="" />
+    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ImageLoaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ImageLoaderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Config.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,16 +59,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -111,7 +128,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java</url>
-          <line>22</line>
+          <line>24</line>
           <properties class="org.example.controller.FinishHandler" method="gameStateStatus">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -120,7 +137,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>32</line>
+          <line>33</line>
           <properties class="org.example.controller.GameManager" method="initialOrderingManager">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -129,7 +146,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>67</line>
+          <line>68</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

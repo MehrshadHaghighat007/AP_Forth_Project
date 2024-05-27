@@ -35,5 +35,45 @@
   "tiles": {
     "width": 4,
     "height": 4
+  },
+  "first menu size": {
+    "width": 400,
+    "height": 400
+  },
+  "first panel coordinate": {
+    "x": 0,
+    "y": 0
+  },
+  "choose mode label": {
+    "location": {
+      "x": 50,
+      "y": 0
+    },
+    "size": {
+      "width": 300,
+      "height": 25
+    }
+  },
+  "buttons": {
+    "CLI": {
+      "location": {
+        "x coordinate": 50,
+        "y coordinate": 30
+      },
+      "size": {
+        "width": 100,
+        "height": 25
+      }
+    },
+    "graphic": {
+      "location": {
+        "x coordinate": 250,
+        "y coordinate": 30
+      },
+      "size": {
+        "width": 100,
+        "height": 25
+      }
+    }
   }
 }

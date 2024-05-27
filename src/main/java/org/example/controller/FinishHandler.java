@@ -9,7 +9,9 @@ public class FinishHandler {
     }
     public boolean gameFinished() {
         for (int i = 0; i < ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height"); i++) {
+
             int pieceIdentifier = myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getPuzzlePieces().get(i).getPieceNumber();
+            System.out.println(pieceIdentifier);
             if (pieceIdentifier == (ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height")) - 1) {
                 continue;
             }
