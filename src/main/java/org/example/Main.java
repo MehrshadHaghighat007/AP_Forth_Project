@@ -5,11 +5,11 @@ import org.example.controller.GameManager;
 import org.example.view.FirstFrame;
 import org.example.view.MyFrame;
 
+
 public class Main {
     public static void main(String[] args) {
-        FirstFrame.getFirstFrame();
 //        ConfigController configController = ConfigController.getConfigController();
-//        System.out.println(configController.getConfig().getSize().get("width"));
-//        new GameManager(MyFrame.getMyFrame(), configController);
+//        new GameManager(configController);
+        new FirstFrame();
     }
 }

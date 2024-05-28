@@ -8,14 +8,12 @@ import javax.swing.*;
 public class MyFrame extends JFrame {
     private static MyFrame myFrame;
     private final org.example.model.MyFrame myFrameParameters;
-    private final SizeOfTheGame sizeOfTheGame;
-
     private MyFrame() {
         myFrameParameters = new org.example.model.MyFrame();
-        sizeOfTheGame = new SizeOfTheGame();
+        SizeOfTheGame sizeOfTheGame = new SizeOfTheGame();
         setSize(sizeOfTheGame.getWidthGame(), sizeOfTheGame.getHeightGame());
         setLocation(sizeOfTheGame.getxCoordinate(), sizeOfTheGame.getyCoordinate());
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         add(myFrameParameters.getMyPanel());
         addKeyListener(new MyKeyListener(this));
         setVisible(true);
@@ -30,9 +28,5 @@ public class MyFrame extends JFrame {
 
     public org.example.model.MyFrame getMyFrameParameters() {
         return myFrameParameters;
-    }
-
-    public SizeOfTheGame getSizeOfTheGame() {
-        return sizeOfTheGame;
     }
 }

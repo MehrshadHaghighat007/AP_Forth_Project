@@ -1,22 +1,16 @@
 package org.example.view;
 
+import org.example.controller.ConfigController;
+
 import javax.swing.*;
 
 public class FirstFrame extends JFrame {
-    private static FirstFrame firstFrame = null;
-    private FirstFrame() {
-        setSize(org.example.model.FirstFrame.getWIDTH(), org.example.model.FirstFrame.getHEIGHT());
+    public FirstFrame() {
+        setSize(ConfigController.getConfigController().getConfig().getSizeOfTheFirstMenu().get("width"), ConfigController.getConfigController().getConfig().getSizeOfTheFirstMenu().get("height"));
         setUndecorated(true);
         setLocationRelativeTo(null);
         setLayout(null);
-        add(org.example.model.FirstFrame.getFirstPanel());
+        add(new FirstPanel(this));
         setVisible(true);
-    }
-
-    public static FirstFrame getFirstFrame() {
-        if (firstFrame == null) {
-            firstFrame = new FirstFrame();
-        }
-        return firstFrame;
     }
 }

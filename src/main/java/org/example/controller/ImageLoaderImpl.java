@@ -22,6 +22,7 @@ public class ImageLoaderImpl implements ImageLoader {
     public void pieceNumberManager(String imageName) {
         if (!imageName.equals("missing.png")) {
             puzzlePiece.setPieceNumber(Integer.parseInt(imageName.substring(0, 2)) - 1);
+//            System.out.println(Integer.parseInt(imageName.substring(0, 2)));
         } else {
             puzzlePiece.setPieceNumber((ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height")) - 1);
         }

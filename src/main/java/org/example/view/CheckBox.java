@@ -6,8 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CheckBox extends JCheckBox {
-    private static CheckBox checkBox = null;
-    private CheckBox() {
+    public CheckBox() {
         setBounds(ConfigController.getConfigController().getConfig().getCheckBoxParameters().get("location").get("x"), ConfigController.getConfigController().getConfig().getCheckBoxParameters().get("location").get("y"), ConfigController.getConfigController().getConfig().getCheckBoxParameters().get("size").get("width"), ConfigController.getConfigController().getConfig().getCheckBoxParameters().get("size").get("height"));
         setText("Oblique movement allowed :");
         setHorizontalAlignment(SwingConstants.CENTER);
@@ -19,12 +18,5 @@ public class CheckBox extends JCheckBox {
         setVerticalTextPosition(SwingConstants.TOP);
         setFocusable(false);
         setOpaque(true);
-    }
-
-    public static CheckBox getCheckBox() {
-        if (checkBox == null) {
-            checkBox = new CheckBox();
-        }
-        return checkBox;
     }
 }

@@ -16,10 +16,10 @@ public class GameManager {
     private final Solvable solvable;
     private final FinishHandler finishHandler;
     private boolean gameFinished = false;
-    private boolean checkingSolvability = true;
+//    private final boolean checkingSolvability = true;
 
-    public GameManager(MyFrame myFrame, ConfigController configController) {
-        this.myFrame = myFrame;
+    public GameManager(ConfigController configController) {
+        myFrame = MyFrame.getMyFrame();
         this.configController = configController;
         solvable = new SolvableImpl(configController);
         finishHandler = new FinishHandler(myFrame);
@@ -47,7 +47,6 @@ public class GameManager {
             if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece() != i) {
                 if (i < 9) {
                     puzzlePieces.add(new PuzzlePiece("0" + (piecesRandomOrder.get(i) + 1) + ".png", new Location(myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getHeightGame() / configController.getConfig().getTiles().get("width") * (i % configController.getConfig().getTiles().get("width")), myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getWidthGame() / configController.getConfig().getTiles().get("height") * (i / configController.getConfig().getTiles().get("width")))));
-                    System.out.println(piecesRandomOrder.get(i) + 1 + ".png");
                 } else {
                     puzzlePieces.add(new PuzzlePiece((piecesRandomOrder.get(i) + 1) + ".png", new Location(myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getHeightGame() / configController.getConfig().getTiles().get("width") * (i % configController.getConfig().getTiles().get("width")), myFrame.getMyFrameParameters().getMyPanel().getSizeOfTheGame().getWidthGame() / configController.getConfig().getTiles().get("height") * (i / configController.getConfig().getTiles().get("width")))));
                 }
@@ -56,6 +55,7 @@ public class GameManager {
             }
         }
         myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setPuzzlePieces(puzzlePieces);
+        System.out.println(puzzlePieces);
         finishHandler.gameFinished();
         finishHandler.gameStateStatus();
     }
@@ -64,7 +64,7 @@ public class GameManager {
         while (true) {
 
             myFrame.getMyFrameParameters().getMyPanel().repaint();
-            myFrame.repaint();
+//            myFrame.repaint();
 
             if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getGameState().equals("finished")) {
                 Warning.showFinishedMessage(myFrame.getMyFrameParameters().getMyPanel());

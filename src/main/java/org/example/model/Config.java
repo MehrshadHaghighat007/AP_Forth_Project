@@ -24,6 +24,11 @@ public class Config {
     private LinkedHashMap<String, LinkedHashMap<String, Integer>> buttonsParameters;
     @SerializedName("check box")
     private LinkedHashMap<String, LinkedHashMap<String, Integer>> checkBoxParameters;
+    @SerializedName("width/height label")
+    private LinkedHashMap<String, LinkedHashMap<String, Integer>> wHParameters;
+    @SerializedName("text fields")
+    private LinkedHashMap<String, LinkedHashMap<String, Integer>> textFieldParameters;
+
 
     public ArrayList<String> getImages() {
         return images;
@@ -59,5 +64,13 @@ public class Config {
 
     public LinkedHashMap<String, LinkedHashMap<String, Integer>> getCheckBoxParameters() {
         return checkBoxParameters;
+    }
+
+    public LinkedHashMap<String, LinkedHashMap<String, Integer>> getwHParameters() {
+        return wHParameters;
+    }
+
+    public LinkedHashMap<String, LinkedHashMap<String, Integer>> getTextFieldParameters() {
+        return textFieldParameters;
     }
 }
