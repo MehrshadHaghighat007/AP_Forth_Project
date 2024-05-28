@@ -9,8 +9,10 @@ public class MyKeyListener implements KeyListener {
     private final UpdatePiece updatePiece;
     private final FinishHandler finishHandler;
     private final MyFrame myFrame;
-    public MyKeyListener(MyFrame myFrame) {
+    private final boolean isSelected;
+    public MyKeyListener(MyFrame myFrame, Boolean isSelected) {
         this.myFrame = myFrame;
+        this.isSelected = isSelected;
         updatePiece = new UpdatePiece(myFrame);
         finishHandler = new FinishHandler(myFrame);
     }
@@ -20,8 +22,9 @@ public class MyKeyListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent keyEvent) {
+        
 
-        int missingPieceIndex = MyFrame.getMyFrame().getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece();
+        int missingPieceIndex = MyFrame.getMyFrame(isSelected).getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece();
         if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
             updatePiece.moveRight(missingPieceIndex);
         } else if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -30,6 +33,17 @@ public class MyKeyListener implements KeyListener {
             updatePiece.moveUp(missingPieceIndex);
         } else if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
             updatePiece.moveDown(missingPieceIndex);
+        }
+        if (isSelected) {
+            if (keyEvent.getKeyCode() == KeyEvent.VK_Q) {
+                updatePiece.moveLeftAndUp(missingPieceIndex);
+            } else if (keyEvent.getKeyCode() == KeyEvent.VK_Z) {
+                updatePiece.moveLeftAndDown(missingPieceIndex);
+            } else if (keyEvent.getKeyCode() == KeyEvent.VK_P) {
+                updatePiece.moveRightAndUp(missingPieceIndex);
+            } else if (keyEvent.getKeyCode() == KeyEvent.VK_M) {
+                updatePiece.moveRightAndDown(missingPieceIndex);
+            }
         }
         finishHandler.gameFinished();
         finishHandler.gameStateStatus();

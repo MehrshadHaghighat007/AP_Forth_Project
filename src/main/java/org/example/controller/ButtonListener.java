@@ -9,25 +9,41 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ButtonListener implements ActionListener {
-    private final String text;
+
+    private final ParentButton parentButton;
+
     public ButtonListener(ParentButton parentButton) {
-        text = parentButton.getText();
-        FirstPanel firstPanel = (FirstPanel) parentButton.getParent();
-//        Window topLevelWindow = SwingUtilities.getWindowAncestor(firstPanel);
-//        System.out.println(topLevelWindow);
-//        if (topLevelWindow != null) {
-//            topLevelWindow.dispose();
-//        }
+        this.parentButton = parentButton;
     }
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-
-        if (text.equals("Graphic")) {
-            new GameManager(ConfigController.getConfigController());
-        } else if (text.equals("CLI")) {
-
-        }
+        run();
     }
+
+    private void run() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                FirstPanel firstPanel = (FirstPanel) parentButton.getParent();
+                Window topLevelWindow = SwingUtilities.getWindowAncestor(firstPanel);
+                if (topLevelWindow != null) {
+                    topLevelWindow.dispose();
+                }
+                if (parentButton.getText().equals("Graphic")) {
+                    System.out.println(CheckBoxListener.isIsSelected());
+                    new GameManager(CheckBoxListener.isIsSelected());
+                }
+                if (parentButton.getText().equals("CLI")) {
+
+                }
+            }
+        }, 0);
+    }
+
 }

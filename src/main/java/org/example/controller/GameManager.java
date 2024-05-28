@@ -16,22 +16,21 @@ public class GameManager {
     private final Solvable solvable;
     private final FinishHandler finishHandler;
     private boolean gameFinished = false;
-//    private final boolean checkingSolvability = true;
 
-    public GameManager(ConfigController configController) {
-        myFrame = MyFrame.getMyFrame();
-        this.configController = configController;
+    public GameManager(Boolean isSelected) {
+        myFrame = MyFrame.getMyFrame(isSelected);
+        configController = ConfigController.getConfigController();
         solvable = new SolvableImpl(configController);
         finishHandler = new FinishHandler(myFrame);
         try {
-            initialOrderingManager();
+            initialOrderingManager(isSelected);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         gameLoop();
     }
 
-    private void initialOrderingManager() throws IOException {
+    private void initialOrderingManager(Boolean isSelected) throws IOException {
         ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
         ArrayList<Integer> piecesRandomOrder = new ArrayList<>(ConfigController.getConfigController().getConfig().getInitialOrdering());
         for (int i = 0; i < piecesRandomOrder.size(); i++) {
@@ -39,9 +38,13 @@ public class GameManager {
                 myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(i);
             }
         }
-        if (!solvable.isSolvable(myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece(), piecesRandomOrder)) {
-            Warning.showSolvabilityMessage(myFrame.getMyFrameParameters().getMyPanel());
-            gameFinished = true;
+        if (!isSelected) {
+            if (!solvable.isSolvable(myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece(), piecesRandomOrder)) {
+                Warning.showSolvabilityMessage(myFrame.getMyFrameParameters().getMyPanel());
+                gameFinished = true;
+            }
+        } else {
+            gameFinished = false;
         }
         for (int i = 0; i < configController.getConfig().getTiles().get("width") * configController.getConfig().getTiles().get("height"); i++) {
             if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece() != i) {
@@ -55,7 +58,6 @@ public class GameManager {
             }
         }
         myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setPuzzlePieces(puzzlePieces);
-        System.out.println(puzzlePieces);
         finishHandler.gameFinished();
         finishHandler.gameStateStatus();
     }
@@ -64,7 +66,7 @@ public class GameManager {
         while (true) {
 
             myFrame.getMyFrameParameters().getMyPanel().repaint();
-//            myFrame.repaint();
+            myFrame.repaint();
 
             if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getGameState().equals("finished")) {
                 Warning.showFinishedMessage(myFrame.getMyFrameParameters().getMyPanel());

@@ -10,7 +10,7 @@ public class FirstFrame extends JFrame {
         setUndecorated(true);
         setLocationRelativeTo(null);
         setLayout(null);
-        add(new FirstPanel(this));
+        add(FirstPanel.getFirstPanel());
         setVisible(true);
     }
 }

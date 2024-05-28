@@ -11,23 +11,22 @@
     "missing.png"
   ],
   "initial-ordering": [
-    0,
     1,
+    0,
     2,
     3,
     4,
     5,
-    6,
-    8,
-    7
+    7,
+    6
   ],
   "size": {
     "width": 2880,
     "height": 1620
   },
   "tiles": {
-    "width": 3,
-    "height": 3
+    "width": 2,
+    "height": 4
   },
   "first menu size": {
     "width": 400,

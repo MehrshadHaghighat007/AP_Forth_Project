@@ -35,4 +35,26 @@ public class UpdatePiece {
             myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(missingPieceIndex + ConfigController.getConfigController().getConfig().getTiles().get("width"));
         }
     }
+    public void moveRightAndUp(int missingPieceIndex) {
+        if (moveableImpl.rightIsValid(missingPieceIndex) && moveableImpl.upIsValid(missingPieceIndex)) {
+            swapImpl.Swap(missingPieceIndex, missingPieceIndex - ConfigController.getConfigController().getConfig().getTiles().get("width") + 1);
+            myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(missingPieceIndex - ConfigController.getConfigController().getConfig().getTiles().get("width") + 1);
+        }
+    }
+    public void moveRightAndDown(int missingPieceIndex) {
+        if (moveableImpl.rightIsValid(missingPieceIndex) && moveableImpl.downIsValid(missingPieceIndex)) {
+            swapImpl.Swap(missingPieceIndex, missingPieceIndex + ConfigController.getConfigController().getConfig().getTiles().get("width") + 1);
+            myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(missingPieceIndex + ConfigController.getConfigController().getConfig().getTiles().get("width") + 1);
+        }
+    }public void moveLeftAndUp(int missingPieceIndex) {
+        if (moveableImpl.leftIsValid(missingPieceIndex) && moveableImpl.upIsValid(missingPieceIndex)) {
+            swapImpl.Swap(missingPieceIndex, missingPieceIndex - ConfigController.getConfigController().getConfig().getTiles().get("width") - 1);
+            myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(missingPieceIndex - ConfigController.getConfigController().getConfig().getTiles().get("width") - 1);
+        }
+    }public void moveLeftAndDown(int missingPieceIndex) {
+        if (moveableImpl.leftIsValid(missingPieceIndex) && moveableImpl.downIsValid(missingPieceIndex)) {
+            swapImpl.Swap(missingPieceIndex, missingPieceIndex + ConfigController.getConfigController().getConfig().getTiles().get("width") - 1);
+            myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(missingPieceIndex + ConfigController.getConfigController().getConfig().getTiles().get("width") - 1);
+        }
+    }
 }
