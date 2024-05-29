@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class SolvableImpl implements Solvable {
     private final ConfigController configController;
-    public  SolvableImpl(ConfigController configController) {
+
+    public SolvableImpl(ConfigController configController) {
         this.configController = configController;
     }
+
     @Override
     public Boolean isSolvable(int missingPiece, ArrayList<Integer> piecesOrder) {
         int inversionCount = 0;

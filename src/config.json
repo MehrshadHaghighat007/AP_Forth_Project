@@ -17,20 +17,24 @@
     3,
     4,
     5,
+    6,
     7,
-    6
+    8,
+    9,
+    11,
+    10
   ],
   "size": {
     "width": 2880,
     "height": 1620
   },
   "tiles": {
-    "width": 2,
+    "width": 3,
     "height": 4
   },
   "first menu size": {
     "width": 400,
-    "height": 210
+    "height": 120
   },
   "first panel coordinate": {
     "x": 0,
@@ -39,7 +43,7 @@
   "choose mode label": {
     "location": {
       "x": 50,
-      "y": 145
+      "y": 60
     },
     "size": {
       "width": 300,
@@ -56,13 +60,13 @@
     "bounds": {
       "width": 100,
       "height": 25,
-      "y": 185
+      "y": 95
     }
   },
   "check box": {
     "location": {
       "x": 0,
-      "y": 80
+      "y": 0
     },
     "size": {
       "width": 400,

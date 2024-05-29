@@ -1,16 +1,30 @@
 package org.example.controller;
 
+import org.example.model.CLI;
 import org.example.view.MyFrame;
 
 public class FinishHandler {
-    private final MyFrame myFrame;
+    private MyFrame myFrame;
+    private CLI model;
+
     public FinishHandler(MyFrame myFrame) {
         this.myFrame = myFrame;
     }
+
+    public FinishHandler(CLI model) {
+        this.model = model;
+    }
+
     public boolean gameFinished() {
         for (int i = 0; i < ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height"); i++) {
+            int pieceIdentifier;
 
-            int pieceIdentifier = myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getPuzzlePieces().get(i).getPieceNumber();
+            if (myFrame != null) {
+                pieceIdentifier = myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getPuzzlePieces().get(i).getPieceNumber();
+            } else {
+                pieceIdentifier = model.getPuzzlePieces().get(i);
+            }
+
 
             if (pieceIdentifier == (ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height")) - 1) {
                 continue;
@@ -22,9 +36,14 @@ public class FinishHandler {
         }
         return true;
     }
+
     public void gameStateStatus() {
         if (gameFinished()) {
-            myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setGameState("finished");
+            if (myFrame != null) {
+                myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setGameState("finished");
+            } else {
+                model.setGameState("finished");
+            }
         }
     }
 }

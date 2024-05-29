@@ -37,10 +37,10 @@ public class ButtonListener implements ActionListener {
                 }
                 if (parentButton.getText().equals("Graphic")) {
                     System.out.println(CheckBoxListener.isIsSelected());
-                    new GameManager(CheckBoxListener.isIsSelected());
+                    new GameManager(CheckBoxListener.isIsSelected(), "Graphic");
                 }
                 if (parentButton.getText().equals("CLI")) {
-
+                    new GameManager(CheckBoxListener.isIsSelected(), "CLI");
                 }
             }
         }, 0);

@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.model.CLI;
 import org.example.model.Location;
 import org.example.model.PuzzlePiece;
 import org.example.view.MyFrame;
@@ -11,41 +12,95 @@ import java.util.ArrayList;
 
 
 public class GameManager {
-    private final MyFrame myFrame;
+    private MyFrame myFrame;
     private final ConfigController configController;
     private final Solvable solvable;
-    private final FinishHandler finishHandler;
+    private FinishHandler finishHandler;
+    private CLI model;
+    private org.example.view.CLI view;
     private boolean gameFinished = false;
 
-    public GameManager(Boolean isSelected) {
-        myFrame = MyFrame.getMyFrame(isSelected);
+    public GameManager(Boolean isSelected, String mode) {
         configController = ConfigController.getConfigController();
         solvable = new SolvableImpl(configController);
-        finishHandler = new FinishHandler(myFrame);
+        missingPieceHandler();
+        if (mode.equals("Graphic")) {
+            graphicManager(isSelected);
+        } else {
+            CLI();
+        }
+        finishHandlerManager(mode);
         try {
-            initialOrderingManager(isSelected);
+            initialOrderingManager(isSelected, mode);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         gameLoop();
     }
 
-    private void initialOrderingManager(Boolean isSelected) throws IOException {
-        ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
+    private int missingPieceHandler() {
+//        ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
         ArrayList<Integer> piecesRandomOrder = new ArrayList<>(ConfigController.getConfigController().getConfig().getInitialOrdering());
+        int missingPiece = 0;
         for (int i = 0; i < piecesRandomOrder.size(); i++) {
             if (piecesRandomOrder.get(i) == configController.getConfig().getTiles().get("width") * configController.getConfig().getTiles().get("height") - 1) {
+                missingPiece = i;
+            }
+        }
+        return missingPiece;
+    }
+
+    private void graphicManager(boolean isSelected) {
+        myFrame = MyFrame.getMyFrame(isSelected);
+
+    }
+
+    private void CLI() {
+        model = new CLI();
+        view = new org.example.view.CLI();
+    }
+
+    private void finishHandlerManager(String mode) {
+        if (mode.equals("Graphic")) {
+            finishHandler = new FinishHandler(myFrame);
+        } else {
+            finishHandler = new FinishHandler(model);
+        }
+    }
+
+    private void initialOrderingManager(Boolean isSelected, String mode) throws IOException {
+        ArrayList<PuzzlePiece> puzzlePieces = new ArrayList<>();
+        ArrayList<Integer> piecesRandomOrder = new ArrayList<>(ConfigController.getConfigController().getConfig().getInitialOrdering());
+        int missingPiece = 0;
+        for (int i = 0; i < piecesRandomOrder.size(); i++) {
+            if (piecesRandomOrder.get(i) == configController.getConfig().getTiles().get("width") * configController.getConfig().getTiles().get("height") - 1) {
+                missingPiece = i;
                 myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setMissingPiece(i);
+                model.setMissingPiece(i);
             }
         }
         if (!isSelected) {
-            if (!solvable.isSolvable(myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece(), piecesRandomOrder)) {
-                Warning.showSolvabilityMessage(myFrame.getMyFrameParameters().getMyPanel());
+            if (!solvable.isSolvable(missingPiece, piecesRandomOrder)) {
+                if (mode.equals("Graphic")) {
+                    Warning.showSolvabilityMessage(myFrame.getMyFrameParameters().getMyPanel());
+                } else {
+                    Warning.CLISolvabilityMessage();
+                }
                 gameFinished = true;
             }
         } else {
             gameFinished = false;
         }
+        if (mode.equals("Graphic")) {
+            graphicManager(puzzlePieces, piecesRandomOrder);
+        } else {
+            CLIManager(piecesRandomOrder);
+        }
+        finishHandler.gameFinished();
+        finishHandler.gameStateStatus();
+    }
+
+    private void graphicManager(ArrayList<PuzzlePiece> puzzlePieces, ArrayList<Integer> piecesRandomOrder) throws IOException {
         for (int i = 0; i < configController.getConfig().getTiles().get("width") * configController.getConfig().getTiles().get("height"); i++) {
             if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getMissingPiece() != i) {
                 if (i < 9) {
@@ -58,8 +113,12 @@ public class GameManager {
             }
         }
         myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setPuzzlePieces(puzzlePieces);
-        finishHandler.gameFinished();
-        finishHandler.gameStateStatus();
+    }
+
+    private void CLIManager(ArrayList<Integer> piecesRandomOrder) {
+        piecesRandomOrder.replaceAll(integer -> integer + 1);
+        model.setPuzzlePieces(piecesRandomOrder);
+        view.paint(model.getPuzzlePieces());
     }
 
     private void gameLoop() {

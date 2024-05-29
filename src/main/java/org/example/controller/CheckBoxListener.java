@@ -1,7 +1,6 @@
 package org.example.controller;
 
 import org.example.view.CheckBox;
-import org.example.view.FirstPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

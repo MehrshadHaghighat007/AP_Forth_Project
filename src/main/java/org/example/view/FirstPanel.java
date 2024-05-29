@@ -13,10 +13,10 @@ public class FirstPanel extends JPanel {
         add(new ParentButton("CLI", ConfigController.getConfigController().getConfig().getButtonsParameters().get("CLI").get("x")));
         add(new ParentButton("Graphic", ConfigController.getConfigController().getConfig().getButtonsParameters().get("graphic").get("x")));
         add(CheckBox.getCheckBox());
-        add(new WidthAndHeightLabel("Width :", ConfigController.getConfigController().getConfig().getwHParameters().get("width").get("y")));
-        add(new WidthAndHeightLabel("Height :", ConfigController.getConfigController().getConfig().getwHParameters().get("height").get("y")));
-        add(new TextFields(ConfigController.getConfigController().getConfig().getTextFieldParameters().get("width").get("y")));
-        add(new TextFields(ConfigController.getConfigController().getConfig().getTextFieldParameters().get("height").get("y")));
+//        add(new WidthAndHeightLabel("Width :", ConfigController.getConfigController().getConfig().getwHParameters().get("width").get("y")));
+//        add(new WidthAndHeightLabel("Height :", ConfigController.getConfigController().getConfig().getwHParameters().get("height").get("y")));
+//        add(new TextFields(ConfigController.getConfigController().getConfig().getTextFieldParameters().get("width").get("y")));
+//        add(new TextFields(ConfigController.getConfigController().getConfig().getTextFieldParameters().get("height").get("y")));
     }
 
     public static FirstPanel getFirstPanel() {
