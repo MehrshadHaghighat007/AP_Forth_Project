@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ButtonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ButtonListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/CheckBoxListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/CheckBoxListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SolvableImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SolvableImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/FirstPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/FirstPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/Warning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/Warning.java" afterDir="false" />
-    </list>
+    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +93,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>53</line>
+          <line>70</line>
           <properties class="org.example.controller.GameManager" method="initialOrderingManager">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -139,7 +129,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>112</line>
+          <line>129</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -154,7 +144,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>109</line>
+          <line>126</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
