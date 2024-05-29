@@ -13,7 +13,7 @@ public class MyFrame extends JFrame {
         SizeOfTheGame sizeOfTheGame = new SizeOfTheGame();
         setSize(sizeOfTheGame.getWidthGame(), sizeOfTheGame.getHeightGame());
         setLocation(sizeOfTheGame.getxCoordinate(), sizeOfTheGame.getyCoordinate());
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         add(myFrameParameters.getMyPanel());
         addKeyListener(new MyKeyListener(this, isSelected));
         setVisible(true);

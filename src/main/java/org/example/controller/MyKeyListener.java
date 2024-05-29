@@ -45,7 +45,6 @@ public class MyKeyListener implements KeyListener {
                 updatePiece.moveRightAndDown(missingPieceIndex);
             }
         }
-        finishHandler.gameFinished();
         finishHandler.gameStateStatus();
         if (myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getGameState().equals("finished")) {
             return;

@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="" />
+    <list default="true" id="fefc8993-1ad5-435c-a6f5-a2aa1f2980b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MyKeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MyKeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/SwapImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/SwapImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UpdatePiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UpdatePiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/CLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/CLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,16 +52,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Debug",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -92,15 +102,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>70</line>
-          <properties class="org.example.controller.GameManager" method="initialOrderingManager">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java</url>
           <line>30</line>
           <properties class="org.example.view.MyPanel" method="paintComponent">
@@ -108,15 +109,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java</url>
-          <line>10</line>
-          <properties class="org.example.view.MyFrame" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MyPanel.java</url>
@@ -127,24 +119,32 @@
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java</url>
+          <line>17</line>
+          <properties class="org.example.controller.FinishHandler" method="gameFinished">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/FinishHandler.java</url>
+          <line>39</line>
+          <properties class="org.example.controller.FinishHandler" method="gameStateStatus">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>129</line>
+          <line>114</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/view/MyFrame.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/GameManager.java</url>
-          <line>126</line>
+          <line>111</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">

@@ -15,14 +15,14 @@ public class FinishHandler {
         this.model = model;
     }
 
-    public boolean gameFinished() {
+    private boolean gameFinished() {
         for (int i = 0; i < ConfigController.getConfigController().getConfig().getTiles().get("width") * ConfigController.getConfigController().getConfig().getTiles().get("height"); i++) {
             int pieceIdentifier;
 
             if (myFrame != null) {
                 pieceIdentifier = myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getPuzzlePieces().get(i).getPieceNumber();
             } else {
-                pieceIdentifier = model.getPuzzlePieces().get(i);
+                pieceIdentifier = model.getPuzzlePieces().get(i) - 1;
             }
 
 
