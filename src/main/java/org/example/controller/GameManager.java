@@ -1,8 +1,8 @@
 package org.example.controller;
 
-import org.example.model.CLI;
 import org.example.model.Location;
 import org.example.model.PuzzlePiece;
+import org.example.view.CLI;
 import org.example.view.MyFrame;
 import org.example.view.Warning;
 
@@ -16,7 +16,6 @@ public class GameManager {
     private final ConfigController configController;
     private final Solvable solvable;
     private FinishHandler finishHandler;
-    private CLI model;
     private org.example.view.CLI view;
     private boolean gameFinished = false;
 
@@ -84,24 +83,22 @@ public class GameManager {
     }
 
     private void CLIManager(Integer missingPiece, Boolean isSelected, ArrayList<Integer> piecesRandomOrder) {
-        model = new CLI();
-        model.setMissingPiece(missingPiece);
 
+        view = new CLI(isSelected);
 
+        view.getModel().setMissingPiece(missingPiece);
 
-        ArrayList<Integer> pieceHelper = new ArrayList<>(piecesRandomOrder.size());
-        for (Integer integer : piecesRandomOrder) {
-            pieceHelper.add(integer + 1);
-        }
-        model.setPuzzlePieces(pieceHelper);
-        view = new org.example.view.CLI(model.getPuzzlePieces(), isSelected);
-        org.example.controller.CLI controller = new org.example.controller.CLI(view, model);
+        view.getModel().setPuzzlePieces(piecesRandomOrder);
+
         if (gameFinished) {
             Warning.CLISolvabilityMessage();
-
+            System.exit(0);
         }
-        finishHandler = new FinishHandler(model);
+
+        finishHandler = new FinishHandler(view);
+
         finishHandler.gameStateStatus();
+
         CLIGameLoop();
 
     }
@@ -135,7 +132,7 @@ public class GameManager {
 
             view.paint();
 
-            if (model.getGameState().equals("finished")) {
+            if (view.getModel().getGameState().equals("finished")) {
                 Warning.CLIFinishedMessage();
                 gameFinished = true;
             }

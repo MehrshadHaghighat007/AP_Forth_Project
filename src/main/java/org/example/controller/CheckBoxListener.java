@@ -14,7 +14,6 @@ public class CheckBoxListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         isSelected = checkBox.isSelected();
-        System.out.println(isSelected);
     }
 
     public static boolean isIsSelected() {

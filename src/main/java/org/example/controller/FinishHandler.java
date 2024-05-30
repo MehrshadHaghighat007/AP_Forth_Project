@@ -1,18 +1,18 @@
 package org.example.controller;
 
-import org.example.model.CLI;
+import org.example.view.CLI;
 import org.example.view.MyFrame;
 
 public class FinishHandler {
     private MyFrame myFrame;
-    private CLI model;
+    private CLI view;
 
     public FinishHandler(MyFrame myFrame) {
         this.myFrame = myFrame;
     }
 
-    public FinishHandler(CLI model) {
-        this.model = model;
+    public FinishHandler(org.example.view.CLI view) {
+        this.view = view;
     }
 
     private boolean gameFinished() {
@@ -22,7 +22,7 @@ public class FinishHandler {
             if (myFrame != null) {
                 pieceIdentifier = myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().getPuzzlePieces().get(i).getPieceNumber();
             } else {
-                pieceIdentifier = model.getPuzzlePieces().get(i) - 1;
+                pieceIdentifier = view.getModel().getPuzzlePieces().get(i);
             }
 
 
@@ -42,7 +42,7 @@ public class FinishHandler {
             if (myFrame != null) {
                 myFrame.getMyFrameParameters().getMyPanel().getMyPanelParameters().setGameState("finished");
             } else {
-                model.setGameState("finished");
+                view.getModel().setGameState("finished");
             }
         }
     }

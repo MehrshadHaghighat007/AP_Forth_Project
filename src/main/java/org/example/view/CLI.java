@@ -2,30 +2,35 @@ package org.example.view;
 
 import org.example.controller.ConfigController;
 
-import java.util.ArrayList;
-
 public class CLI {
-    private final ArrayList<Integer> puzzlePiece;
     private final boolean isSelected;
 
-    public CLI(ArrayList<Integer> puzzlePiece, Boolean isSelected) {
-        this.puzzlePiece = puzzlePiece;
+    private final org.example.model.CLI model;
+
+    private final org.example.controller.CLI controller;
+
+    public CLI(Boolean isSelected) {
+
         this.isSelected = isSelected;
+
+        model = new org.example.model.CLI();
+
+        controller = new org.example.controller.CLI(this);
     }
 
     public void paint() {
-        for (int i = 0; i < puzzlePiece.size(); i++) {
-            if (puzzlePiece.get(i) < 10) {
+        for (int i = 0; i < model.getPuzzlePieces().size(); i++) {
+            if (model.getPuzzlePieces().get(i) < 10) {
                 if (i % ConfigController.getConfigController().getConfig().getTiles().get("width") != ConfigController.getConfigController().getConfig().getTiles().get("width") - 1) {
-                    System.out.print(" " + puzzlePiece.get(i) + " ");
+                    System.out.print(" " + (model.getPuzzlePieces().get(i) + 1) + " ");
                 } else {
-                    System.out.println(" " + puzzlePiece.get(i) + " ");
+                    System.out.println(" " + (model.getPuzzlePieces().get(i) + 1) + " ");
                 }
             } else {
                 if (i % ConfigController.getConfigController().getConfig().getTiles().get("width") != ConfigController.getConfigController().getConfig().getTiles().get("width") - 1) {
-                    System.out.print(" " + puzzlePiece.get(i));
+                    System.out.print(" " + (model.getPuzzlePieces().get(i) + 1));
                 } else {
-                    System.out.println(" " + puzzlePiece.get(i));
+                    System.out.println(" " + (model.getPuzzlePieces().get(i) + 1));
                 }
             }
         }
@@ -34,14 +39,18 @@ public class CLI {
     public void choose() {
         System.out.println("choose on of this movement :" + "\n" + "1 - right" + "\n" + "2 - left" + "\n" + "3 - up" + "\n" + "4 - down");
         if (isSelected) {
-            System.out.println("5 - right|up" + "\n" + "6 - right|down" + "\n" + "7 - left|right" + "\n" + "8 - left|down");
+            System.out.println("5 - right|up" + "\n" + "6 - right|down" + "\n" + "7 - left|up" + "\n" + "8 - left|down");
         }
-        org.example.controller.CLI.scanner();
+        controller.scanner();
     }
 
     public void answerIsNotValid() {
         System.out.println("please enter a valid number");
         choose();
+    }
+
+    public org.example.model.CLI getModel() {
+        return model;
     }
 
     public boolean isSelected() {

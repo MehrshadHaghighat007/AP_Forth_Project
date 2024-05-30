@@ -31,7 +31,6 @@ public class MyPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for (PuzzlePiece piece : myPanelParameters.getPuzzlePieces()) {
-            System.out.println("OK");
             g.drawImage(piece.getImg(), piece.getLocation().getX(), piece.getLocation().getY(), (int) this.getSize().getWidth() / ConfigController.getConfigController().getConfig().getTiles().get("width"), (int) this.getSize().getHeight() / ConfigController.getConfigController().getConfig().getTiles().get("height"), null);
         }
     }
