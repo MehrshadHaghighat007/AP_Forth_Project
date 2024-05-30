@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.controller.ConfigController;
-import org.example.controller.GameManager;
-import org.example.view.FirstFrame;
-import org.example.view.MyFrame;
+import org.example.view.opening.FirstFrame;
 
 
 public class Main {

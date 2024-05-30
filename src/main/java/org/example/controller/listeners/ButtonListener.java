@@ -1,0 +1,48 @@
+package org.example.controller.listeners;
+
+import org.example.controller.game.GameManager;
+import org.example.view.opening.FirstPanel;
+import org.example.view.opening.ParentButton;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class ButtonListener implements ActionListener {
+
+    private final ParentButton parentButton;
+
+    public ButtonListener(ParentButton parentButton) {
+        this.parentButton = parentButton;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        run();
+    }
+
+    private void run() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                FirstPanel firstPanel = (FirstPanel) parentButton.getParent();
+                Window topLevelWindow = SwingUtilities.getWindowAncestor(firstPanel);
+                if (topLevelWindow != null) {
+                    topLevelWindow.dispose();
+                }
+                if (parentButton.getText().equals("Graphic")) {
+                    System.out.println(CheckBoxListener.isIsSelected());
+                    new GameManager(CheckBoxListener.isIsSelected(), "Graphic");
+                }
+                if (parentButton.getText().equals("CLI")) {
+                    new GameManager(CheckBoxListener.isIsSelected(), "CLI");
+                }
+            }
+        }, 0);
+    }
+
+}
